@@ -1,0 +1,46 @@
+======================================================================
+q3 — IA (borde)
+
+### SQL IA q3
+SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" FROM "blog_post" WHERE ("blog_post"."published_at" > 2026-03-01 AND "blog_post"."published_at" < 2026-05-31)
+
+### SQL equipo q3
+SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" FROM "blog_post" WHERE ("blog_post"."published" = True AND "blog_post"."published_at" BETWEEN 2026-03-01 AND 2026-05-31) ORDER BY "blog_post"."published_at" ASC
+IA q3 -> ['Managers propios paso a paso', 'QuerySets perezosos', 'El problema de las N+1 consultas', 'Opinión: ¿vale la pena aprender SQL?', 'Notas sobre pruebas en Django', 'Entrevista a una desarrolladora', 'Guía de despliegue']
+Equipo q3 -> [('Introducción al ORM de Django', '2026-03-01'), ('Managers propios paso a paso', '2026-03-15'), ('Notas sobre pruebas en Django', '2026-03-25'), ('QuerySets perezosos', '2026-04-02'), ('El problema de las N+1 consultas', '2026-04-20'), ('Entrevista a una desarrolladora', '2026-05-05'), ('Opinión: ¿vale la pena aprender SQL?', '2026-05-10'), ('Guía de despliegue', '2026-05-20'), ('Reseña: festival de cine andino', '2026-05-31')]
+======================================================================
+q4 — IA (correcta pero cara)
+Consultas ejecutadas por la IA: 16
+   SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" FROM "blog_post"
+   SELECT COUNT(*) AS "__count" FROM "blog_comment" WHERE "blog_comment"."post_id" = 1
+   SELECT COUNT(*) AS "__count" FROM "blog_comment" WHERE "blog_comment"."post_id" = 2
+   ... (una consulta COUNT por cada uno de los 15 artículos)
+
+### SQL equipo q4 (1 sola consulta)
+SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at", COUNT("blog_comment"."id") AS "n_comments" FROM "blog_post" LEFT OUTER JOIN "blog_comment" ON ("blog_post"."id" = "blog_comment"."post_id") GROUP BY "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" HAVING COUNT("blog_comment"."id") > 2 ORDER BY 8 DESC
+======================================================================
+q5 — IA (conteos multiplicados)
+
+### SQL IA q5
+SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at", COUNT("blog_comment"."id") AS "n_comments", COUNT("blog_post_tags"."tag_id") AS "n_tags" FROM "blog_post" LEFT OUTER JOIN "blog_comment" ON ("blog_post"."id" = "blog_comment"."post_id") LEFT OUTER JOIN "blog_post_tags" ON ("blog_post"."id" = "blog_post_tags"."post_id") WHERE "blog_post"."published" = True GROUP BY "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" ORDER BY 8 DESC LIMIT 3
+IA q5 -> [('Introducción al ORM de Django', 18, 18), ('QuerySets perezosos', 12, 12), ('Managers propios paso a paso', 8, 8)]
+
+### SQL equipo q5
+SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at", COUNT(DISTINCT "blog_comment"."id") AS "n_comments", COUNT(DISTINCT "blog_post_tags"."tag_id") AS "n_tags" FROM "blog_post" LEFT OUTER JOIN "blog_comment" ON ("blog_post"."id" = "blog_comment"."post_id") LEFT OUTER JOIN "blog_post_tags" ON ("blog_post"."id" = "blog_post_tags"."post_id") WHERE "blog_post"."published" = True GROUP BY "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" ORDER BY 8 DESC, "blog_post"."title" ASC LIMIT 3
+Equipo q5 -> [('Introducción al ORM de Django', 6, 3), ('Managers propios paso a paso', 4, 2), ('QuerySets perezosos', 3, 4)]
+======================================================================
+q6 — IA (campo inventado)
+FieldError: Unsupported lookup 'country' for ForeignKey or join on the field not permitted.
+
+### SQL equipo q6
+SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" FROM "blog_post" INNER JOIN "blog_author" ON ("blog_post"."author_id" = "blog_author"."id") INNER JOIN "blog_profile" ON ("blog_author"."id" = "blog_profile"."author_id") WHERE "blog_profile"."country" = Perú
+======================================================================
+q8 — IA (significado de la pregunta)
+
+### SQL IA q8
+SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" INNER JOIN "blog_post" ON ("blog_author"."id" = "blog_post"."author_id") WHERE "blog_post"."published" = False
+IA q8 -> ['Ana Quispe', 'Carla Rojas', 'Carla Rojas', 'Carla Rojas']
+
+### SQL equipo q8
+SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE NOT (EXISTS(SELECT 1 AS "a" FROM "blog_post" "U1" WHERE ("U1"."published" = True AND "U1"."author_id" = ("blog_author"."id")) LIMIT 1))
+Equipo q8 -> ['Carla Rojas', 'Diego Pinto']

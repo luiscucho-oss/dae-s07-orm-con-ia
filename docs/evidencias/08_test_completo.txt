@@ -1,0 +1,35 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Found 24 test(s).
+test_a_human_approval_of_the_exact_plan_applies_it (blog.tests.test_agent.GateTests.test_a_human_approval_of_the_exact_plan_applies_it) ... ok
+test_a_read_runs_and_comes_back_marked_untrusted (blog.tests.test_agent.GateTests.test_a_read_runs_and_comes_back_marked_untrusted) ... ok
+test_an_approval_for_another_plan_is_worthless (blog.tests.test_agent.GateTests.test_an_approval_for_another_plan_is_worthless) ... ok
+test_arguments_must_fit_exactly (blog.tests.test_agent.GateTests.test_arguments_must_fit_exactly) ... ok
+test_code_is_not_an_intent (blog.tests.test_agent.GateTests.test_code_is_not_an_intent) ... ok
+test_following_the_injection_deletes_nothing (blog.tests.test_agent.GateTests.test_following_the_injection_deletes_nothing)
+A model that obeys the hostile comment asks to delete: it only gets a plan. ... ok
+test_the_approval_dies_if_the_data_changed_after_the_human_looked (blog.tests.test_agent.GateTests.test_the_approval_dies_if_the_data_changed_after_the_human_looked) ... ok
+test_the_command_prints_the_plan_and_applies_nothing (blog.tests.test_agent.GateTests.test_the_command_prints_the_plan_and_applies_nothing) ... ok
+test_unknown_actions_are_denied (blog.tests.test_agent.GateTests.test_unknown_actions_are_denied) ... ok
+test_reference_solutions_are_all_correct_and_cheap (blog.tests.test_duel.DuelTests.test_reference_solutions_are_all_correct_and_cheap) ... skipped 'carpeta teacher/ ausente'
+test_single_question (blog.tests.test_duel.DuelTests.test_single_question) ... ok
+test_the_assistant_fails_where_the_lab_says (blog.tests.test_duel.DuelTests.test_the_assistant_fails_where_the_lab_says) ... ok
+test_the_team_answers_are_all_correct_and_cheap (blog.tests.test_duel.DuelTests.test_the_team_answers_are_all_correct_and_cheap) ... ok
+test_front_page_runs_two_queries (blog.tests.test_front_page.FrontPageTests.test_front_page_runs_two_queries) ... ok
+test_front_page_shows_the_published_posts (blog.tests.test_front_page.FrontPageTests.test_front_page_shows_the_published_posts) ... ok
+test_the_reference_solution_is_green (blog.tests.test_front_page.FrontPageTests.test_the_reference_solution_is_green) ... skipped 'carpeta teacher/ ausente'
+test_counts_match_the_seed_data (blog.tests.test_seed.SeedTests.test_counts_match_the_seed_data) ... ok
+test_seeding_twice_does_not_duplicate (blog.tests.test_seed.SeedTests.test_seeding_twice_does_not_duplicate) ... ok
+test_the_hostile_comment_is_there (blog.tests.test_seed.SeedTests.test_the_hostile_comment_is_there) ... ok
+test_a_reply_without_json_is_an_error (blog.tests.test_agent.ModelAdapterTests.test_a_reply_without_json_is_an_error) ... ok
+test_ask_model_uses_the_endpoint_and_returns_the_intent (blog.tests.test_agent.ModelAdapterTests.test_ask_model_uses_the_endpoint_and_returns_the_intent) ... ok
+test_it_parses_an_intent_wrapped_in_fences (blog.tests.test_agent.ModelAdapterTests.test_it_parses_an_intent_wrapped_in_fences) ... ok
+test_every_destructive_action_has_a_plan (blog.tests.test_agent.RegistryShapeTests.test_every_destructive_action_has_a_plan) ... ok
+test_there_is_no_generic_escape_hatch (blog.tests.test_agent.RegistryShapeTests.test_there_is_no_generic_escape_hatch) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.125s
+
+OK (skipped=2)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+ OK
+System check identified no issues (0 silenced).

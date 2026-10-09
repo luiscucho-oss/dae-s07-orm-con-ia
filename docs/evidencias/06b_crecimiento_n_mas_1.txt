@@ -1,0 +1,3 @@
+N = 11 artículos publicados | antes: 23 consultas (1 + 2·11) | después: 2 consultas
+N = 21 artículos publicados | antes: 43 consultas (1 + 2·21) | después: 2 consultas
+(los 10 artículos extra se crearon dentro de una transacción revertida)

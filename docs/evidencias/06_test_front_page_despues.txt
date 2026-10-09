@@ -1,0 +1,41 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Found 1 test(s).
+test_front_page_runs_two_queries (blog.tests.test_front_page.FrontPageTests.test_front_page_runs_two_queries) ... ok
+(0.000) SELECT "blog_post"."id",
+       "blog_post"."title",
+       "blog_post"."body",
+       "blog_post"."author_id",
+       "blog_post"."category_id",
+       "blog_post"."published",
+       "blog_post"."published_at",
+       "blog_author"."id",
+       "blog_author"."name"
+FROM "blog_post"
+INNER JOIN "blog_author" ON ("blog_post"."author_id" = "blog_author"."id")
+WHERE "blog_post"."published" = 1
+ORDER BY "blog_post"."published_at" DESC; args=(True,); alias=default
+(0.000) SELECT ("blog_post_tags"."post_id") AS "_prefetch_related_val_post_id",
+       "blog_tag"."id",
+       "blog_tag"."name"
+FROM "blog_tag"
+INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id")
+WHERE "blog_post_tags"."post_id" IN (7,
+                                     5,
+                                     11,
+                                     8,
+                                     10,
+                                     4,
+                                     3,
+                                     9,
+                                     2,
+                                     1,
+                                     6); args=(7, 5, 11, 8, 10, 4, 3, 9, 2, 1, 6); alias=default
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+Ran 1 test in 0.044s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+ OK
+System check identified no issues (0 silenced).

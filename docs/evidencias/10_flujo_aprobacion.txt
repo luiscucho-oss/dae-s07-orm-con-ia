@@ -1,0 +1,65 @@
+### 1) Comentarios del artículo 5 antes de borrar
+$ python manage.py agent --intent '{"action": "comments_of_post", "args": {"post_id": 5}}'
+{
+  "status": "ok",
+  "untrusted_data": [
+    {
+      "author_name": "Lector 1",
+      "text": "Comentario 1 sobre «Reseña: festival de cine andino»"
+    }
+  ]
+}
+
+### 2) Pedir el borrado (genera el plan y su hash, no borra nada)
+$ python manage.py agent --intent '{"action": "delete_comments_of_post", "args": {"post_id": 5}}'
+{
+  "status": "approval_required",
+  "plan": {
+    "action": "delete_comments_of_post",
+    "args": {
+      "post_id": 5
+    },
+    "details": {
+      "affected_comment_ids": [
+        16
+      ]
+    },
+    "plan_hash": "4d7ffe2c0e99"
+  }
+}
+
+No se aplicó nada. Si TÚ apruebas este plan, repite el comando con --approve 4d7ffe2c0e99
+
+### 3) Un humano aprueba ESE plan con su hash (4d7ffe2c0e99)
+$ python manage.py agent --intent '{"action": "delete_comments_of_post", "args": {"post_id": 5}}' --approve 4d7ffe2c0e99
+{
+  "status": "applied",
+  "plan": {
+    "action": "delete_comments_of_post",
+    "args": {
+      "post_id": 5
+    },
+    "details": {
+      "affected_comment_ids": [
+        16
+      ]
+    },
+    "plan_hash": "4d7ffe2c0e99"
+  },
+  "result": {
+    "deleted": 1
+  }
+}
+
+### 4) Verificar que se borraron
+{
+  "status": "ok",
+  "untrusted_data": []
+}
+Comentarios del artículo 5 en la BD: 0
+Comentarios totales: 22
+
+### 5) Restaurar los datos
+$ python manage.py seed_blog
+Listo: 4 autores, 15 artículos, 23 comentarios.
+Tras restaurar, «Reseña: festival de cine andino» tiene id=20 y 1 comentario(s)

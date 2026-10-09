@@ -1,0 +1,17 @@
+
+Duelo — respuestas de: ai
+q1  ✔ correcta               1 consulta(s)   Los artículos que ya están publicados.
+q2  ✔ correcta               1 consulta(s)   Los artículos que no tienen categoría asignada.
+q3  ✘ resultado distinto     1 consulta(s)   Los artículos publicados entre el 1 de marzo y el 31 de mayo
+      └─ faltan 2 (p. ej. 'Introducción al ORM de Django')
+q4  ⚠ correcta pero cara     16 consulta(s)  Los artículos con más de dos comentarios.
+      └─ 16 consultas; una buena respuesta necesita 1
+q5  ✘ resultado distinto     1 consulta(s)   Los tres artículos publicados con más comentarios, y de cada
+      └─ devolvió [('Introducción al ORM de Django', 18, 18), ('QuerySets perezosos', 12, 12), ('Managers propios paso a paso', 8, 8)]; se esperaba [('Introducción al ORM de Django', 6, 3), ('Managers propios paso a paso', 4, 2), ('QuerySets perezosos', 3, 4)]
+q6  ✘ error                  0 consulta(s)   Los artículos escritos por autores de Perú (publicados o no)
+      └─ FieldError: Unsupported lookup 'country' for ForeignKey or join on the field not permitted.
+q7  ✔ correcta               1 consulta(s)   Los comentarios de los artículos de la categoría «Tecnología
+q8  ✘ resultado distinto     1 consulta(s)   Los autores que nunca han publicado un artículo.
+      └─ faltan 1 (p. ej. 'Diego Pinto'); sobran 1 (p. ej. 'Ana Quispe')
+
+3 de 8 correctas y baratas.

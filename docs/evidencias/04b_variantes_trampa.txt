@@ -1,0 +1,9 @@
+q3  ✔ correcta             published_at__year=2026, published_at__month__in=[3, 4, 5]  (alternativa válida)
+q3  ✔ correcta             published_at__gte=1/3 y published_at__lte=31/5  (equivale a __range)
+q4  ✘ resultado distinto   Count('comments') con __gte=2  (borde: 'más de dos' es > 2)
+      └─ sobran 4 (p. ej. 'El problema de las N+1 consultas')
+q5  ✘ resultado distinto   sin distinct=True  (conteos multiplicados)
+      └─ devolvió [('Introducción al ORM de Django', 18, 18), ('QuerySets perezosos', 12, 12), ('Managers propios paso a paso', 8, 8)]; se esperaba [('Introduc
+q8  ✘ resultado distinto   filter(posts__isnull=True)  (solo autores sin ningún artículo)
+      └─ faltan 1 (p. ej. 'Carla Rojas')
+q8  ✔ correcta             annotate(n=Count('posts', filter=Q(published))).filter(n=0)  (alternativa válida)

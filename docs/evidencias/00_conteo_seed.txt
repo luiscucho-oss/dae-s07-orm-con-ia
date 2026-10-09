@@ -1,0 +1,15 @@
+>>> from blog.models import Author, Profile, Category, Tag, Post, Comment
+>>> Author.objects.count()
+4
+>>> Profile.objects.count()
+4
+>>> Category.objects.count()
+4
+>>> Tag.objects.count()
+5
+>>> Post.objects.count()
+15
+>>> Post.objects.filter(published=True).count()
+11
+>>> Comment.objects.count()
+23

@@ -1,0 +1,42 @@
+Creating test database for alias 'default'...
+F.s
+======================================================================
+FAIL: test_front_page_runs_two_queries (blog.tests.test_front_page.FrontPageTests.test_front_page_runs_two_queries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Alumno\Desktop\lab07\blog\tests\test_front_page.py", line 29, in test_front_page_runs_two_queries
+    with self.assertNumQueries(2):
+         ~~~~~~~~~~~~~~~~~~~~~^^^
+AssertionError: 23 != 2 : 23 queries executed, 2 expected
+Captured queries were:
+1. SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" FROM "blog_post" WHERE "blog_post"."published" = 1 ORDER BY "blog_post"."published_at" DESC
+2. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 2 LIMIT 21
+3. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 7
+4. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 2 LIMIT 21
+5. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 5
+6. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 2 LIMIT 21
+7. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 11
+8. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 1 LIMIT 21
+9. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 8
+10. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 2 LIMIT 21
+11. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 10
+12. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 2 LIMIT 21
+13. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 4
+14. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 1 LIMIT 21
+15. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 3
+16. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 1 LIMIT 21
+17. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 9
+18. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 1 LIMIT 21
+19. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 2
+20. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 1 LIMIT 21
+21. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 1
+22. SELECT "blog_author"."id", "blog_author"."name" FROM "blog_author" WHERE "blog_author"."id" = 2 LIMIT 21
+23. SELECT "blog_tag"."id", "blog_tag"."name" FROM "blog_tag" INNER JOIN "blog_post_tags" ON ("blog_tag"."id" = "blog_post_tags"."tag_id") WHERE "blog_post_tags"."post_id" = 6
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.048s
+
+FAILED (failures=1, skipped=1)
+Destroying test database for alias 'default'...
+Found 3 test(s).
+System check identified no issues (0 silenced).

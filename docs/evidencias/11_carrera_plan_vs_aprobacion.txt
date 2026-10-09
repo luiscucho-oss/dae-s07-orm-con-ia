@@ -1,0 +1,60 @@
+(Tras seed_blog, «Reseña: festival de cine andino» tiene id=20)
+
+### 1) Se genera el plan (un humano lo revisa)
+$ python manage.py agent --intent '{"action": "delete_comments_of_post", "args": {"post_id": 20}}'
+{
+  "status": "approval_required",
+  "plan": {
+    "action": "delete_comments_of_post",
+    "args": {
+      "post_id": 20
+    },
+    "details": {
+      "affected_comment_ids": [
+        39
+      ]
+    },
+    "plan_hash": "838daacb5fbb"
+  }
+}
+
+No se aplicó nada. Si TÚ apruebas este plan, repite el comando con --approve 838daacb5fbb
+
+### 2) Mientras tanto, alguien agrega un comentario al artículo
+Comentario creado con id 47
+
+### 3) El humano aprueba con el hash que vio (838daacb5fbb)
+$ python manage.py agent --intent '{"action": "delete_comments_of_post", "args": {"post_id": 20}}' --approve 838daacb5fbb
+{
+  "status": "approval_required",
+  "plan": {
+    "action": "delete_comments_of_post",
+    "args": {
+      "post_id": 20
+    },
+    "details": {
+      "affected_comment_ids": [
+        39,
+        47
+      ]
+    },
+    "plan_hash": "8729adce1f16"
+  }
+}
+
+No se aplicó nada. Si TÚ apruebas este plan, repite el comando con --approve 8729adce1f16
+
+### 4) ¿Se borró algo?
+Comentarios del artículo: 2
+
+Hash aprobado: 838daacb5fbb  |  Hash del plan actual: 8729adce1f16  -> no coinciden, la aprobación vieja no vale
+
+### 5) Extra: un modelo intenta colar la aprobación dentro de los argumentos
+$ python manage.py agent --intent '{"action": "delete_comments_of_post", "args": {"post_id": 20, "approve": "8729adce1f16"}}'
+{
+  "status": "denied",
+  "reason": "expected arguments ['post_id'], got ['approve', 'post_id']"
+}
+
+### 6) Restaurar los datos
+Listo: 4 autores, 15 artículos, 23 comentarios.

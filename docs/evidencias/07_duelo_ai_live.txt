@@ -1,0 +1,15 @@
+
+Duelo — respuestas de: ai_live
+q1  ✔ correcta               1 consulta(s)   Los artículos que ya están publicados.
+q2  ✔ correcta               1 consulta(s)   Los artículos que no tienen categoría asignada.
+q3  ✔ correcta               1 consulta(s)   Los artículos publicados entre el 1 de marzo y el 31 de mayo
+q4  ✔ correcta               1 consulta(s)   Los artículos con más de dos comentarios.
+q5  ✔ correcta               1 consulta(s)   Los tres artículos publicados con más comentarios, y de cada
+q6  ✔ correcta               1 consulta(s)   Los artículos escritos por autores de Perú (publicados o no)
+q7  ✔ correcta               1 consulta(s)   Los comentarios de los artículos de la categoría «Tecnología
+q8  ✔ correcta               1 consulta(s)   Los autores que nunca han publicado un artículo.
+
+8 de 8 correctas y baratas.
+
+>>> print(ai_live_answers.q6().query)
+SELECT "blog_post"."id", "blog_post"."title", "blog_post"."body", "blog_post"."author_id", "blog_post"."category_id", "blog_post"."published", "blog_post"."published_at" FROM "blog_post" INNER JOIN "blog_author" ON ("blog_post"."author_id" = "blog_author"."id") INNER JOIN "blog_profile" ON ("blog_author"."id" = "blog_profile"."author_id") WHERE ("blog_profile"."country" LIKE Perú ESCAPE '\' OR "blog_profile"."country" LIKE Peru ESCAPE '\')

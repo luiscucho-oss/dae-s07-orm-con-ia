@@ -1,0 +1,105 @@
+<svg class="rich-terminal" viewBox="0 0 1324 342.79999999999995" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+    <style>
+
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Regular"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff") format("woff");
+        font-style: normal;
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Bold"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff") format("woff");
+        font-style: bold;
+        font-weight: 700;
+    }
+
+    .terminal-2534467923-matrix {
+        font-family: Fira Code, monospace;
+        font-size: 20px;
+        line-height: 24.4px;
+        font-variant-east-asian: full-width;
+    }
+
+    .terminal-2534467923-title {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: arial;
+    }
+
+    .terminal-2534467923-r1 { fill: #98e024;font-weight: bold }
+.terminal-2534467923-r2 { fill: #c4c5b5;font-weight: bold }
+.terminal-2534467923-r3 { fill: #d9d9d9 }
+.terminal-2534467923-r4 { fill: #d9d9d9;font-weight: bold }
+    </style>
+
+    <defs>
+    <clipPath id="terminal-2534467923-clip-terminal">
+      <rect x="0" y="0" width="1304.3999999999999" height="291.79999999999995" />
+    </clipPath>
+    <clipPath id="terminal-2534467923-line-0">
+    <rect x="0" y="1.5" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-1">
+    <rect x="0" y="25.9" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-2">
+    <rect x="0" y="50.3" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-3">
+    <rect x="0" y="74.7" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-4">
+    <rect x="0" y="99.1" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-5">
+    <rect x="0" y="123.5" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-6">
+    <rect x="0" y="147.9" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-7">
+    <rect x="0" y="172.3" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-8">
+    <rect x="0" y="196.7" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-9">
+    <rect x="0" y="221.1" width="1305.4" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2534467923-line-10">
+    <rect x="0" y="245.5" width="1305.4" height="24.65"/>
+            </clipPath>
+    </defs>
+
+    <rect fill="#0c0c0c" stroke="rgba(255,255,255,0.35)" stroke-width="1" x="1" y="1" width="1322" height="340.8" rx="8"/><text class="terminal-2534467923-title" fill="#d9d9d9" text-anchor="middle" x="661" y="27">Paso&#160;5&#160;·&#160;duelo&#160;8&#160;de&#160;8</text>
+            <g transform="translate(26,22)">
+            <circle cx="0" cy="0" r="7" fill="#ff5f57"/>
+            <circle cx="22" cy="0" r="7" fill="#febc2e"/>
+            <circle cx="44" cy="0" r="7" fill="#28c840"/>
+            </g>
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-2534467923-clip-terminal)">
+    
+    <g class="terminal-2534467923-matrix">
+    <text class="terminal-2534467923-r1" x="0" y="20" textLength="183" clip-path="url(#terminal-2534467923-line-0)">(.venv)&#160;lab07&gt;&#160;</text><text class="terminal-2534467923-r2" x="183" y="20" textLength="256.2" clip-path="url(#terminal-2534467923-line-0)">python&#160;manage.py&#160;duel</text><text class="terminal-2534467923-r3" x="1305.4" y="20" textLength="12.2" clip-path="url(#terminal-2534467923-line-0)">
+</text><text class="terminal-2534467923-r3" x="0" y="44.4" textLength="329.4" clip-path="url(#terminal-2534467923-line-1)">Duelo&#160;—&#160;respuestas&#160;de:&#160;team</text><text class="terminal-2534467923-r3" x="1305.4" y="44.4" textLength="12.2" clip-path="url(#terminal-2534467923-line-1)">
+</text><text class="terminal-2534467923-r3" x="0" y="68.8" textLength="48.8" clip-path="url(#terminal-2534467923-line-2)">q1&#160;&#160;</text><text class="terminal-2534467923-r1" x="48.8" y="68.8" textLength="122" clip-path="url(#terminal-2534467923-line-2)">✔&#160;correcta</text><text class="terminal-2534467923-r3" x="170.8" y="68.8" textLength="841.8" clip-path="url(#terminal-2534467923-line-2)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;consulta(s)&#160;&#160;&#160;Los&#160;artículos&#160;que&#160;ya&#160;están&#160;publicados.</text><text class="terminal-2534467923-r3" x="1305.4" y="68.8" textLength="12.2" clip-path="url(#terminal-2534467923-line-2)">
+</text><text class="terminal-2534467923-r3" x="0" y="93.2" textLength="48.8" clip-path="url(#terminal-2534467923-line-3)">q2&#160;&#160;</text><text class="terminal-2534467923-r1" x="48.8" y="93.2" textLength="122" clip-path="url(#terminal-2534467923-line-3)">✔&#160;correcta</text><text class="terminal-2534467923-r3" x="170.8" y="93.2" textLength="951.6" clip-path="url(#terminal-2534467923-line-3)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;consulta(s)&#160;&#160;&#160;Los&#160;artículos&#160;que&#160;no&#160;tienen&#160;categoría&#160;asignada.</text><text class="terminal-2534467923-r3" x="1305.4" y="93.2" textLength="12.2" clip-path="url(#terminal-2534467923-line-3)">
+</text><text class="terminal-2534467923-r3" x="0" y="117.6" textLength="48.8" clip-path="url(#terminal-2534467923-line-4)">q3&#160;&#160;</text><text class="terminal-2534467923-r1" x="48.8" y="117.6" textLength="122" clip-path="url(#terminal-2534467923-line-4)">✔&#160;correcta</text><text class="terminal-2534467923-r3" x="170.8" y="117.6" textLength="1110.2" clip-path="url(#terminal-2534467923-line-4)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;consulta(s)&#160;&#160;&#160;Los&#160;artículos&#160;publicados&#160;entre&#160;el&#160;1&#160;de&#160;marzo&#160;y&#160;el&#160;31&#160;de&#160;mayo</text><text class="terminal-2534467923-r3" x="1305.4" y="117.6" textLength="12.2" clip-path="url(#terminal-2534467923-line-4)">
+</text><text class="terminal-2534467923-r3" x="0" y="142" textLength="48.8" clip-path="url(#terminal-2534467923-line-5)">q4&#160;&#160;</text><text class="terminal-2534467923-r1" x="48.8" y="142" textLength="122" clip-path="url(#terminal-2534467923-line-5)">✔&#160;correcta</text><text class="terminal-2534467923-r3" x="170.8" y="142" textLength="878.4" clip-path="url(#terminal-2534467923-line-5)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;consulta(s)&#160;&#160;&#160;Los&#160;artículos&#160;con&#160;más&#160;de&#160;dos&#160;comentarios.</text><text class="terminal-2534467923-r3" x="1305.4" y="142" textLength="12.2" clip-path="url(#terminal-2534467923-line-5)">
+</text><text class="terminal-2534467923-r3" x="0" y="166.4" textLength="48.8" clip-path="url(#terminal-2534467923-line-6)">q5&#160;&#160;</text><text class="terminal-2534467923-r1" x="48.8" y="166.4" textLength="122" clip-path="url(#terminal-2534467923-line-6)">✔&#160;correcta</text><text class="terminal-2534467923-r3" x="170.8" y="166.4" textLength="1110.2" clip-path="url(#terminal-2534467923-line-6)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;consulta(s)&#160;&#160;&#160;Los&#160;tres&#160;artículos&#160;publicados&#160;con&#160;más&#160;comentarios,&#160;y&#160;de&#160;cada</text><text class="terminal-2534467923-r3" x="1305.4" y="166.4" textLength="12.2" clip-path="url(#terminal-2534467923-line-6)">
+</text><text class="terminal-2534467923-r3" x="0" y="190.8" textLength="48.8" clip-path="url(#terminal-2534467923-line-7)">q6&#160;&#160;</text><text class="terminal-2534467923-r1" x="48.8" y="190.8" textLength="122" clip-path="url(#terminal-2534467923-line-7)">✔&#160;correcta</text><text class="terminal-2534467923-r3" x="170.8" y="190.8" textLength="1110.2" clip-path="url(#terminal-2534467923-line-7)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;consulta(s)&#160;&#160;&#160;Los&#160;artículos&#160;escritos&#160;por&#160;autores&#160;de&#160;Perú&#160;(publicados&#160;o&#160;no)</text><text class="terminal-2534467923-r3" x="1305.4" y="190.8" textLength="12.2" clip-path="url(#terminal-2534467923-line-7)">
+</text><text class="terminal-2534467923-r3" x="0" y="215.2" textLength="48.8" clip-path="url(#terminal-2534467923-line-8)">q7&#160;&#160;</text><text class="terminal-2534467923-r1" x="48.8" y="215.2" textLength="122" clip-path="url(#terminal-2534467923-line-8)">✔&#160;correcta</text><text class="terminal-2534467923-r3" x="170.8" y="215.2" textLength="1110.2" clip-path="url(#terminal-2534467923-line-8)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;consulta(s)&#160;&#160;&#160;Los&#160;comentarios&#160;de&#160;los&#160;artículos&#160;de&#160;la&#160;categoría&#160;«Tecnología</text><text class="terminal-2534467923-r3" x="1305.4" y="215.2" textLength="12.2" clip-path="url(#terminal-2534467923-line-8)">
+</text><text class="terminal-2534467923-r3" x="0" y="239.6" textLength="48.8" clip-path="url(#terminal-2534467923-line-9)">q8&#160;&#160;</text><text class="terminal-2534467923-r1" x="48.8" y="239.6" textLength="122" clip-path="url(#terminal-2534467923-line-9)">✔&#160;correcta</text><text class="terminal-2534467923-r3" x="170.8" y="239.6" textLength="963.8" clip-path="url(#terminal-2534467923-line-9)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;consulta(s)&#160;&#160;&#160;Los&#160;autores&#160;que&#160;nunca&#160;han&#160;publicado&#160;un&#160;artículo.</text><text class="terminal-2534467923-r3" x="1305.4" y="239.6" textLength="12.2" clip-path="url(#terminal-2534467923-line-9)">
+</text><text class="terminal-2534467923-r3" x="1305.4" y="264" textLength="12.2" clip-path="url(#terminal-2534467923-line-10)">
+</text><text class="terminal-2534467923-r4" x="0" y="288.4" textLength="329.4" clip-path="url(#terminal-2534467923-line-11)">8&#160;de&#160;8&#160;correctas&#160;y&#160;baratas.</text><text class="terminal-2534467923-r3" x="1305.4" y="288.4" textLength="12.2" clip-path="url(#terminal-2534467923-line-11)">
+</text>
+    </g>
+    </g>
+</svg>

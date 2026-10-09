@@ -1,0 +1,97 @@
+<svg class="rich-terminal" viewBox="0 0 1970 294.0" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+    <style>
+
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Regular"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff") format("woff");
+        font-style: normal;
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Bold"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff") format("woff");
+        font-style: bold;
+        font-weight: 700;
+    }
+
+    .terminal-1881446488-matrix {
+        font-family: Fira Code, monospace;
+        font-size: 20px;
+        line-height: 24.4px;
+        font-variant-east-asian: full-width;
+    }
+
+    .terminal-1881446488-title {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: arial;
+    }
+
+    .terminal-1881446488-r1 { fill: #98e024;font-weight: bold }
+.terminal-1881446488-r2 { fill: #c4c5b5;font-weight: bold }
+.terminal-1881446488-r3 { fill: #d9d9d9 }
+.terminal-1881446488-r4 { fill: #f4005f;font-weight: bold }
+    </style>
+
+    <defs>
+    <clipPath id="terminal-1881446488-clip-terminal">
+      <rect x="0" y="0" width="1951.0" height="243.0" />
+    </clipPath>
+    <clipPath id="terminal-1881446488-line-0">
+    <rect x="0" y="1.5" width="1952" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1881446488-line-1">
+    <rect x="0" y="25.9" width="1952" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1881446488-line-2">
+    <rect x="0" y="50.3" width="1952" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1881446488-line-3">
+    <rect x="0" y="74.7" width="1952" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1881446488-line-4">
+    <rect x="0" y="99.1" width="1952" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1881446488-line-5">
+    <rect x="0" y="123.5" width="1952" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1881446488-line-6">
+    <rect x="0" y="147.9" width="1952" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1881446488-line-7">
+    <rect x="0" y="172.3" width="1952" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1881446488-line-8">
+    <rect x="0" y="196.7" width="1952" height="24.65"/>
+            </clipPath>
+    </defs>
+
+    <rect fill="#0c0c0c" stroke="rgba(255,255,255,0.35)" stroke-width="1" x="1" y="1" width="1968" height="292" rx="8"/><text class="terminal-1881446488-title" fill="#d9d9d9" text-anchor="middle" x="984" y="27">Paso&#160;7&#160;·&#160;variantes&#160;trampa</text>
+            <g transform="translate(26,22)">
+            <circle cx="0" cy="0" r="7" fill="#ff5f57"/>
+            <circle cx="22" cy="0" r="7" fill="#febc2e"/>
+            <circle cx="44" cy="0" r="7" fill="#28c840"/>
+            </g>
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-1881446488-clip-terminal)">
+    
+    <g class="terminal-1881446488-matrix">
+    <text class="terminal-1881446488-r1" x="0" y="20" textLength="183" clip-path="url(#terminal-1881446488-line-0)">(.venv)&#160;lab07&gt;&#160;</text><text class="terminal-1881446488-r2" x="183" y="20" textLength="536.8" clip-path="url(#terminal-1881446488-line-0)">python&#160;manage.py&#160;shell&#160;&#160;&#160;#&#160;run_question(...)</text><text class="terminal-1881446488-r3" x="1952" y="20" textLength="12.2" clip-path="url(#terminal-1881446488-line-0)">
+</text><text class="terminal-1881446488-r3" x="0" y="44.4" textLength="48.8" clip-path="url(#terminal-1881446488-line-1)">q3&#160;&#160;</text><text class="terminal-1881446488-r1" x="48.8" y="44.4" textLength="122" clip-path="url(#terminal-1881446488-line-1)">✔&#160;correcta</text><text class="terminal-1881446488-r3" x="170.8" y="44.4" textLength="1134.6" clip-path="url(#terminal-1881446488-line-1)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;published_at__year=2026,&#160;published_at__month__in=[3,&#160;4,&#160;5]&#160;&#160;(alternativa&#160;válida)</text><text class="terminal-1881446488-r3" x="1952" y="44.4" textLength="12.2" clip-path="url(#terminal-1881446488-line-1)">
+</text><text class="terminal-1881446488-r3" x="0" y="68.8" textLength="48.8" clip-path="url(#terminal-1881446488-line-2)">q3&#160;&#160;</text><text class="terminal-1881446488-r1" x="48.8" y="68.8" textLength="122" clip-path="url(#terminal-1881446488-line-2)">✔&#160;correcta</text><text class="terminal-1881446488-r3" x="170.8" y="68.8" textLength="988.2" clip-path="url(#terminal-1881446488-line-2)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;published_at__gte=1/3&#160;y&#160;published_at__lte=31/5&#160;&#160;(equivale&#160;a&#160;__range)</text><text class="terminal-1881446488-r3" x="1952" y="68.8" textLength="12.2" clip-path="url(#terminal-1881446488-line-2)">
+</text><text class="terminal-1881446488-r3" x="0" y="93.2" textLength="48.8" clip-path="url(#terminal-1881446488-line-3)">q4&#160;&#160;</text><text class="terminal-1881446488-r4" x="48.8" y="93.2" textLength="280.6" clip-path="url(#terminal-1881446488-line-3)">✘&#160;resultado&#160;distinto&#160;&#160;&#160;</text><text class="terminal-1881446488-r3" x="329.4" y="93.2" textLength="719.8" clip-path="url(#terminal-1881446488-line-3)">Count(&#x27;comments&#x27;)&#160;con&#160;__gte=2&#160;&#160;(borde:&#160;&#x27;más&#160;de&#160;dos&#x27;&#160;es&#160;&gt;&#160;2)</text><text class="terminal-1881446488-r3" x="1952" y="93.2" textLength="12.2" clip-path="url(#terminal-1881446488-line-3)">
+</text><text class="terminal-1881446488-r3" x="0" y="117.6" textLength="744.2" clip-path="url(#terminal-1881446488-line-4)">&#160;&#160;&#160;&#160;&#160;&#160;└─&#160;sobran&#160;4&#160;(p.&#160;ej.&#160;&#x27;El&#160;problema&#160;de&#160;las&#160;N+1&#160;consultas&#x27;)</text><text class="terminal-1881446488-r3" x="1952" y="117.6" textLength="12.2" clip-path="url(#terminal-1881446488-line-4)">
+</text><text class="terminal-1881446488-r3" x="0" y="142" textLength="48.8" clip-path="url(#terminal-1881446488-line-5)">q5&#160;&#160;</text><text class="terminal-1881446488-r4" x="48.8" y="142" textLength="427" clip-path="url(#terminal-1881446488-line-5)">✘&#160;resultado&#160;distinto&#160;&#160;&#160;sin&#160;distinct</text><text class="terminal-1881446488-r3" x="475.8" y="142" textLength="366" clip-path="url(#terminal-1881446488-line-5)">=True&#160;&#160;(conteos&#160;multiplicados)</text><text class="terminal-1881446488-r3" x="1952" y="142" textLength="12.2" clip-path="url(#terminal-1881446488-line-5)">
+</text><text class="terminal-1881446488-r3" x="0" y="166.4" textLength="1939.8" clip-path="url(#terminal-1881446488-line-6)">&#160;&#160;&#160;&#160;&#160;&#160;└─&#160;devolvió&#160;[(&#x27;Introducción&#160;al&#160;ORM&#160;de&#160;Django&#x27;,&#160;18,&#160;18),&#160;(&#x27;QuerySets&#160;perezosos&#x27;,&#160;12,&#160;12),&#160;(&#x27;Managers&#160;propios&#160;paso&#160;a&#160;paso&#x27;,&#160;8,&#160;8)];&#160;se&#160;esperaba&#160;[(&#x27;Introduc</text><text class="terminal-1881446488-r3" x="1952" y="166.4" textLength="12.2" clip-path="url(#terminal-1881446488-line-6)">
+</text><text class="terminal-1881446488-r3" x="0" y="190.8" textLength="48.8" clip-path="url(#terminal-1881446488-line-7)">q8&#160;&#160;</text><text class="terminal-1881446488-r4" x="48.8" y="190.8" textLength="353.8" clip-path="url(#terminal-1881446488-line-7)">✘&#160;resultado&#160;distinto&#160;&#160;&#160;filter</text><text class="terminal-1881446488-r3" x="402.6" y="190.8" textLength="683.2" clip-path="url(#terminal-1881446488-line-7)">(posts__isnull=True)&#160;&#160;(solo&#160;autores&#160;sin&#160;ningún&#160;artículo)</text><text class="terminal-1881446488-r3" x="1952" y="190.8" textLength="12.2" clip-path="url(#terminal-1881446488-line-7)">
+</text><text class="terminal-1881446488-r3" x="0" y="215.2" textLength="488" clip-path="url(#terminal-1881446488-line-8)">&#160;&#160;&#160;&#160;&#160;&#160;└─&#160;faltan&#160;1&#160;(p.&#160;ej.&#160;&#x27;Carla&#160;Rojas&#x27;)</text><text class="terminal-1881446488-r3" x="1952" y="215.2" textLength="12.2" clip-path="url(#terminal-1881446488-line-8)">
+</text><text class="terminal-1881446488-r3" x="0" y="239.6" textLength="48.8" clip-path="url(#terminal-1881446488-line-9)">q8&#160;&#160;</text><text class="terminal-1881446488-r1" x="48.8" y="239.6" textLength="122" clip-path="url(#terminal-1881446488-line-9)">✔&#160;correcta</text><text class="terminal-1881446488-r3" x="170.8" y="239.6" textLength="1146.8" clip-path="url(#terminal-1881446488-line-9)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;annotate(n=Count(&#x27;posts&#x27;,&#160;filter=Q(published))).filter(n=0)&#160;&#160;(alternativa&#160;válida)</text><text class="terminal-1881446488-r3" x="1952" y="239.6" textLength="12.2" clip-path="url(#terminal-1881446488-line-9)">
+</text>
+    </g>
+    </g>
+</svg>

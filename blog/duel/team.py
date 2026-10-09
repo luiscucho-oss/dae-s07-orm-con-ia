@@ -19,40 +19,58 @@ from blog.models import Author, Category, Comment, Post, Profile, Tag  # noqa: F
 
 def q1():
     """Los artículos que ya están publicados."""
-    raise NotImplementedError
+    return Post.objects.filter(published=True).order_by("published_at")
 
 
 def q2():
     """Los artículos que no tienen categoría asignada."""
-    raise NotImplementedError
+    return Post.objects.filter(category__isnull=True)
 
 
 def q3():
     """Los artículos publicados entre el 1 de marzo y el 31 de mayo de 2026, ambos días incluidos."""
-    raise NotImplementedError
+    # published_at is a DateField, so __range (BETWEEN) includes both ends.
+    return Post.objects.filter(
+        published=True,
+        published_at__range=(date(2026, 3, 1), date(2026, 5, 31)),
+    ).order_by("published_at")
 
 
 def q4():
     """Los artículos con más de dos comentarios."""
-    raise NotImplementedError
+    return (
+        Post.objects.annotate(n_comments=Count("comments"))
+        .filter(n_comments__gt=2)
+        .order_by("-n_comments")
+    )
 
 
 def q5():
     """Los tres artículos publicados con más comentarios; de cada uno, cuántos comentarios
     (`n_comments`) y cuántas etiquetas (`n_tags`)."""
-    raise NotImplementedError
+    # Two joins (comments and tags) multiply the rows: distinct=True keeps each count honest.
+    return (
+        Post.objects.filter(published=True)
+        .annotate(
+            n_comments=Count("comments", distinct=True),
+            n_tags=Count("tags", distinct=True),
+        )
+        .order_by("-n_comments", "title")[:3]
+    )
 
 
 def q6():
     """Los artículos escritos por autores de Perú (publicados o no)."""
-    raise NotImplementedError
+    # The country lives in the one-to-one Profile, not in Author.
+    return Post.objects.filter(author__profile__country="Perú")
 
 
 def q7():
     """Los comentarios de los artículos de la categoría «Tecnología»."""
-    raise NotImplementedError
+    return Comment.objects.filter(post__category__name="Tecnología")
 
 
 def q8():
     """Los autores que nunca han publicado un artículo."""
-    raise NotImplementedError
+    # exclude() also keeps authors with drafts only, not just the ones with no posts at all.
+    return Author.objects.exclude(posts__published=True)

@@ -153,7 +153,8 @@ SQL y no filtran en Python.
 de datos puede devolver las filas en cualquier orden. Las ocho consultas ordenan, y q6 y q7 lo hacen
 por campos de otra tabla (`author__name`, `post__title`), que Django resuelve con el mismo `JOIN` del
 filtro: `ORDER BY "blog_author"."name" ASC, "blog_post"."title" ASC`. Ordenar no agrega consultas;
-las ocho siguen en 1.
+las ocho siguen en 1. Las capturas de las secciones 3 y 4 se tomaron antes de agregar este orden; el
+duelo se volvió a ejecutar después del cambio y sigue en 8 de 8.
 
 **Intentos.** Las ocho pasaron en el primer intento. Antes de escribirlas se exploraron los datos en
 `manage.py shell` (sección 2.2) para ubicar los bordes, y eso evitó los errores típicos que aparecen

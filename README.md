@@ -141,13 +141,19 @@ SQL y no filtran en Python.
 | # | Pregunta | Consulta ORM | Técnica | Filas | Intentos | Veredicto |
 |---|---|---|---|---|---|---|
 | q1 | Artículos publicados | `Post.objects.filter(published=True).order_by("published_at")` | filtro + orden | 11 | 1 | ✔ 1 consulta |
-| q2 | Artículos sin categoría | `Post.objects.filter(category__isnull=True)` | FK nula | 2 | 1 | ✔ 1 consulta |
-| q3 | Publicados del 01/03 al 31/05/2026, ambos incluidos | `Post.objects.filter(published=True, published_at__range=(date(2026, 3, 1), date(2026, 5, 31)))` | filtros encadenados (AND) + rango inclusivo (`BETWEEN`) | 9 | 1 | ✔ 1 consulta |
-| q4 | Artículos con más de dos comentarios | `Post.objects.annotate(n_comments=Count("comments")).filter(n_comments__gt=2)` | relación inversa + agregación → `HAVING` | 3 | 1 | ✔ 1 consulta |
+| q2 | Artículos sin categoría | `Post.objects.filter(category__isnull=True).order_by("title")` | FK nula + orden | 2 | 1 | ✔ 1 consulta |
+| q3 | Publicados del 01/03 al 31/05/2026, ambos incluidos | `Post.objects.filter(published=True).filter(published_at__range=(date(2026, 3, 1), date(2026, 5, 31))).order_by("published_at")` | filtros encadenados (AND en el mismo `WHERE`) + rango inclusivo (`BETWEEN`) + orden | 9 | 1 | ✔ 1 consulta |
+| q4 | Artículos con más de dos comentarios | `Post.objects.annotate(n_comments=Count("comments")).filter(n_comments__gt=2).order_by("-n_comments", "title")` | relación inversa + agregación → `HAVING` + orden por la anotación | 3 | 1 | ✔ 1 consulta |
 | q5 | Top 3 publicados por comentarios, con `n_comments` y `n_tags` | `Post.objects.filter(published=True).annotate(n_comments=Count("comments", distinct=True), n_tags=Count("tags", distinct=True)).order_by("-n_comments", "title")[:3]` | dos agregaciones sobre dos JOIN + `distinct` + `LIMIT` | 3 | 1 | ✔ 1 consulta |
-| q6 | Artículos de autores de Perú | `Post.objects.filter(author__profile__country="Perú")` | atraviesa FK + uno a uno (2 JOIN) | 12 | 1 | ✔ 1 consulta |
-| q7 | Comentarios de artículos de «Tecnología» | `Comment.objects.filter(post__category__name="Tecnología")` | atraviesa dos FK desde el hijo | 17 | 1 | ✔ 1 consulta |
-| q8 | Autores que nunca han publicado | `Author.objects.exclude(posts__published=True)` | relación inversa + `exclude` → `NOT EXISTS` | 2 | 1 | ✔ 1 consulta |
+| q6 | Artículos de autores de Perú | `Post.objects.filter(author__profile__country="Perú").order_by("author__name", "title")` | atraviesa FK + uno a uno (2 JOIN) y ordena por un campo de la relación | 12 | 1 | ✔ 1 consulta |
+| q7 | Comentarios de artículos de «Tecnología» | `Comment.objects.filter(post__category__name="Tecnología").order_by("post__title", "created_at")` | atraviesa dos FK desde el hijo y ordena por el artículo | 17 | 1 | ✔ 1 consulta |
+| q8 | Autores que nunca han publicado | `Author.objects.exclude(posts__published=True).order_by("name")` | relación inversa + `exclude` → `NOT EXISTS` + orden | 2 | 1 | ✔ 1 consulta |
+
+**Orden explícito en las ocho.** Ningún modelo define `Meta.ordering`, así que sin `order_by` la base
+de datos puede devolver las filas en cualquier orden. Las ocho consultas ordenan, y q6 y q7 lo hacen
+por campos de otra tabla (`author__name`, `post__title`), que Django resuelve con el mismo `JOIN` del
+filtro: `ORDER BY "blog_author"."name" ASC, "blog_post"."title" ASC`. Ordenar no agrega consultas;
+las ocho siguen en 1.
 
 **Intentos.** Las ocho pasaron en el primer intento. Antes de escribirlas se exploraron los datos en
 `manage.py shell` (sección 2.2) para ubicar los bordes, y eso evitó los errores típicos que aparecen
@@ -488,9 +494,13 @@ dae-s07-orm-con-ia/
 ├── config/                        # settings, urls, wsgi
 ├── docs/
 │   ├── ENUNCIADO.md               # README original del laboratorio
-│   ├── capturas/                  # capturas (SVG) de la salida de cada comando
+│   ├── capturas/                  # salida de cada comando (SVG) y el proyecto en el editor (PNG)
 │   └── evidencias/                # la misma salida en texto plano
 ├── manage.py
 ├── requirements.txt
 └── README.md                      # este entregable
 ```
+
+El proyecto abierto en Visual Studio Code, con las consultas de `blog/duel/team.py`:
+
+![Estructura del proyecto en Visual Studio Code](docs/capturas/12_estructura_editor.png)

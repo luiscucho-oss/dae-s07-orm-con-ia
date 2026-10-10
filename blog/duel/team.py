@@ -24,16 +24,18 @@ def q1():
 
 def q2():
     """Los artículos que no tienen categoría asignada."""
-    return Post.objects.filter(category__isnull=True)
+    return Post.objects.filter(category__isnull=True).order_by("title")
 
 
 def q3():
     """Los artículos publicados entre el 1 de marzo y el 31 de mayo de 2026, ambos días incluidos."""
+    # Chained filters on single-valued fields are ANDed in the same WHERE.
     # published_at is a DateField, so __range (BETWEEN) includes both ends.
-    return Post.objects.filter(
-        published=True,
-        published_at__range=(date(2026, 3, 1), date(2026, 5, 31)),
-    ).order_by("published_at")
+    return (
+        Post.objects.filter(published=True)
+        .filter(published_at__range=(date(2026, 3, 1), date(2026, 5, 31)))
+        .order_by("published_at")
+    )
 
 
 def q4():
@@ -41,7 +43,7 @@ def q4():
     return (
         Post.objects.annotate(n_comments=Count("comments"))
         .filter(n_comments__gt=2)
-        .order_by("-n_comments")
+        .order_by("-n_comments", "title")
     )
 
 
@@ -62,15 +64,17 @@ def q5():
 def q6():
     """Los artículos escritos por autores de Perú (publicados o no)."""
     # The country lives in the one-to-one Profile, not in Author.
-    return Post.objects.filter(author__profile__country="Perú")
+    return Post.objects.filter(author__profile__country="Perú").order_by("author__name", "title")
 
 
 def q7():
     """Los comentarios de los artículos de la categoría «Tecnología»."""
-    return Comment.objects.filter(post__category__name="Tecnología")
+    return Comment.objects.filter(post__category__name="Tecnología").order_by(
+        "post__title", "created_at"
+    )
 
 
 def q8():
     """Los autores que nunca han publicado un artículo."""
     # exclude() also keeps authors with drafts only, not just the ones with no posts at all.
-    return Author.objects.exclude(posts__published=True)
+    return Author.objects.exclude(posts__published=True).order_by("name")
